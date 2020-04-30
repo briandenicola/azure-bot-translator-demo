@@ -1,0 +1,40 @@
+trigger:
+  branches:
+    include:
+    - master
+  paths:
+    exclude:
+    - deploy/*
+    - infrastructure/*
+
+variables:
+  connectedServiceName: ''
+  WebAppName: ''
+
+pool:
+  name: Azure Pipelines
+
+steps:
+- task: NuGetToolInstaller@0
+  displayName: 'Use NuGet 4.4.1'
+  inputs:
+    versionSpec: 4.4.1
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+  inputs:
+    projects: 'src/**/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet publish'
+  inputs:
+    command: publish
+    modifyOutputPath: false
+
+- task: AzureWebApp@1
+  displayName: 'Azure Web App Deploy: bjdtranslator01'
+  inputs:
+    azureSubscription: '$(connectedServiceName)'
+    appType: webApp
+    appName: '$(WebAppName)'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip '
