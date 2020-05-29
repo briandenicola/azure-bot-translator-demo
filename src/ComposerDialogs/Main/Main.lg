@@ -1,7 +1,0 @@
-[import](common.lg)
-
-# bfdprompt-228498()
-- Please enter something to be translated to Italian
-
-# bfdactivity-598087()
--  ${dialog.api_response.content[0].translations[0].text}

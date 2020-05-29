@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# SendActivity_M4thym()
+-  Welcome to the Translator Bot. Please enter a phrase
+# SendActivity_DMSxFu()
+- You said: ${dialog.api_response.content[0].translations[0].text}
