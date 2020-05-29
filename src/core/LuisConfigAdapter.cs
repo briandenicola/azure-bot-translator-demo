@@ -2,15 +2,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 
-namespace Microsoft.Bot.Builder.ComposerBot.Json
+namespace Microsoft.BotFramework.Composer.Core
 {
-    public static class LuisConfigAdaptor
+    public static class LuisConfigAdapter
     {
-        public static IConfigurationBuilder UseLuisConfigAdaptor(this IConfigurationBuilder builder)
+        public static IConfigurationBuilder UseLuisConfigAdapter(this IConfigurationBuilder builder)
         {
             var configuration = builder.Build();
             var settings = new Dictionary<string, string>();

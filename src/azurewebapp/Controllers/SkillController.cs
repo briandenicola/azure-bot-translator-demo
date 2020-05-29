@@ -4,11 +4,12 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
 using Microsoft.Bot.Builder.Skills;
 using Microsoft.Bot.Schema;
 
-namespace Microsoft.Bot.Builder.TestBot.Json.Controllers
+namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
 {
     /// <summary>
     /// A controller that handles skill replies to the bot.
