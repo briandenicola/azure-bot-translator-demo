@@ -16,10 +16,10 @@ A simple Bot based on the Bot Framework translates English to Italian
 # Deploy Bot Code
 * Command Line
     * cd src
-    * Change {{REPLACEME}} in src\ComposerDialog\translate\translate.dialog with Translator API Key
+    * Change {{REPLACEME}} in azurewebapp\ComposerDialog\translator.dialog with Translator API Key
         * TBD to automate this with a App Settings variable 
-    * dotnet build
-    * dotnet publish -o publish
+    * dotnet build azurewebapp
+    * dotnet publish azurewebapp -o publish
     * Compress-Archive -Path .\publish\* -DestinationPath bot.zip
     * az webapp deployment source config-zip --resource-group BOT_RG --name bjdtranslator --src .\bot.zip
 
